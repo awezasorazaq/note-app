@@ -36,39 +36,53 @@ const LoginPage = () => {
     };
     
     return (
-        <div className = "login-container">
-            <Title level = {2} style = {{color: '#AF73F5'}}>Login</Title>
-            <Form name = "login" onFinish = {onFinish}>
-                <Form.Item
-                    name = "username"
-                    rules = {[{required: true, message: 'Please enter your username!'}]}
-                >
-                    <Input
-                        prefix = {<UserOutlined/>}
-                        placeholder = "Username"
-                        className = "input-field"
-                    />
-                </Form.Item>
-                <Form.Item
-                    name = "password"
-                    rules = {[{required: true, message: 'Please enter your password!'}]}
-                >
-                    <Input.Password
-                        prefix = {<LockOutlined/>}
-                        placeholder = "Password"
-                        className = "input-field"
-                    />
-                </Form.Item>
-                <Form.Item>
-                    <Button type = "primary" htmlType = "submit" className = "login-button"
-                            style = {{background: '#CF96F1', color: '#FFF', transition: 'background-color 0.3s ease'}}>
-                        Login
-                    </Button>
-                </Form.Item>
-            </Form>
-            <p className = "error-message">{errorMessage}</p>
-            <div className = "signUp-link">
-                Don't have an account? <Link to = "/signUp">Sign Up</Link>
+        <div
+        style={{
+            width: '100vw',
+            height: '100vh',
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+        }}
+        >
+            <div className="login-container">
+                <Title level={2} style={{color: '#AF73F5'}}>Login</Title>
+                <Form name="login" onFinish={onFinish}>
+                    <Form.Item
+                        name="username"
+                        rules={[{required: true, message: 'Please enter your username!'}]}
+                    >
+                        <Input
+                            prefix={<UserOutlined/>}
+                            placeholder="Username"
+                            className="input-field"
+                        />
+                    </Form.Item>
+                    <Form.Item
+                        name="password"
+                        rules={[{required: true, message: 'Please enter your password!'}]}
+                    >
+                        <Input.Password
+                            prefix={<LockOutlined/>}
+                            placeholder="Password"
+                            className="input-field"
+                        />
+                    </Form.Item>
+                    <Form.Item>
+                        <Button type="primary" htmlType="submit" className="login-button"
+                                style={{
+                                    background: '#CF96F1',
+                                    color: '#FFF',
+                                    transition: 'background-color 0.3s ease'
+                                }}>
+                            Login
+                        </Button>
+                    </Form.Item>
+                </Form>
+                <p className="error-message">{errorMessage}</p>
+                <div className="signUp-link">
+                    Don't have an account? <Link to="/signUp">Sign Up</Link>
+                </div>
             </div>
         </div>
     );

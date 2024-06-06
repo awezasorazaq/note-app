@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { Form, Input, Button, Typography, message } from 'antd';
-import { Link, useNavigate } from 'react-router-dom';
+import {useState} from 'react';
+import {Form, Input, Button, Typography, message} from 'antd';
+import {Link, useNavigate} from 'react-router-dom';
 import '../styles/SignUp.css';
 import axios from '../Config/axios';
 
-const { Title } = Typography;
+const {Title} = Typography;
 
 const SignUp = () => {
     const [errorMessage, setErrorMessage] = useState('');
@@ -40,39 +40,53 @@ const SignUp = () => {
     };
 
     return (
-        <div className="signup-container">
-            <Title level={2} style={{color:'#af73f5'}}>Sign Up</Title>
-            <Form name="signup" onFinish={onFinish}>
-                <Form.Item
-                    name="username"
-                    rules={[{ required: true, message: 'Please enter your username!' }]}
-                >
-                    <Input placeholder="Username" />
-                </Form.Item>
-                <Form.Item
-                    name="email"
-                    rules={[
-                        { required: true, message: 'Please enter your email!' },
-                        { type: 'email', message: 'Please enter a valid email address!' },
-                    ]}
-                >
-                    <Input placeholder="Email" />
-                </Form.Item>
-                <Form.Item
-                    name="password"
-                    rules={[{ required: true, message: 'Please enter your password!' }]}
-                >
-                    <Input.Password placeholder="Password" />
-                </Form.Item>
-                <Form.Item>
-                    <Button type="primary" htmlType="submit" style={{background:'#cf96f1', color:'#FFF', transition: 'background-color 0.3s ease'}}>
-                        Sign Up
-                    </Button>
-                </Form.Item>
-            </Form>
-            <p className="error-message">{errorMessage}</p>
-            <div className="login-link">
-                Already have an account? <Link to="/">Login</Link>
+        <div
+            style={{
+                width: '100vw',
+                height: '100vh',
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center"
+            }}
+        >
+            <div className="signup-container">
+                <Title level={2} style={{color: '#af73f5'}}>Sign Up</Title>
+                <Form name="signup" onFinish={onFinish}>
+                    <Form.Item
+                        name="username"
+                        rules={[{required: true, message: 'Please enter your username!'}]}
+                    >
+                        <Input placeholder="Username"/>
+                    </Form.Item>
+                    <Form.Item
+                        name="email"
+                        rules={[
+                            {required: true, message: 'Please enter your email!'},
+                            {type: 'email', message: 'Please enter a valid email address!'},
+                        ]}
+                    >
+                        <Input placeholder="Email"/>
+                    </Form.Item>
+                    <Form.Item
+                        name="password"
+                        rules={[{required: true, message: 'Please enter your password!'}]}
+                    >
+                        <Input.Password placeholder="Password"/>
+                    </Form.Item>
+                    <Form.Item>
+                        <Button type="primary" htmlType="submit" style={{
+                            background: '#cf96f1',
+                            color: '#FFF',
+                            transition: 'background-color 0.3s ease'
+                        }}>
+                            Sign Up
+                        </Button>
+                    </Form.Item>
+                </Form>
+                <p className="error-message">{errorMessage}</p>
+                <div className="login-link">
+                    Already have an account? <Link to="/">Login</Link>
+                </div>
             </div>
         </div>
     );
