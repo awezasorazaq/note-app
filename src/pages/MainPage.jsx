@@ -24,7 +24,7 @@ const MainPage = () => {
     
     const fetchNotes = async () => {
         try {
-            const response = await axios.get('/notes/getAllNotes');
+            const response = await axios.get('/notes/getallnotes');
             const postsData = response.data;
             setNotes(postsData);
         } catch (error) {
@@ -37,7 +37,7 @@ const MainPage = () => {
             const values = await formCreateNote.validateFields();
             const {title, content} = values;
             
-            const response = await axios.post('/notes/createNote', {title, content});
+            const response = await axios.post('/notes/createnote', {title, content});
             if (response.status === 201) {
                 message.success('Note created successfully!');
                 formCreateNote.resetFields();
@@ -53,7 +53,7 @@ const MainPage = () => {
     const saveEditedNote = async (values) => {
         try {
             const {title, content} = values;
-            const response = await axios.put(`/notes/editNote/${state.currentNoteId}`, {title, content});
+            const response = await axios.put(`/notes/editnote/${state.currentNoteId}`, {title, content});
             if (response.status === 200) {
                 setState({
                     setModalOpen: false
@@ -144,7 +144,7 @@ const MainPage = () => {
                                     <Button
                                         block = {true} type = {"primary"}
                                         onClick = {async () => {
-                                            await axios.delete(`/notes/deleteNote/${post.note_id}`);
+                                            await axios.delete(`/notes/deletenote/${post.note_id}`);
                                             fetchNotes();
                                         }}
                                         style = {{background: '#FF0000', color: '#FFF'}}>Delete</Button>
