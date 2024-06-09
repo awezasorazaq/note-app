@@ -1,7 +1,7 @@
 import {useEffect, useReducer, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {Button, Card, Col, Divider, Form, Input, Layout, message, Modal, Row, Typography} from 'antd';
-import axios from '../Config/axios';
+import axios from '../config/axios';
 import Cookies from "js-cookie";
 
 const {Header, Content} = Layout;

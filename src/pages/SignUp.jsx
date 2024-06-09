@@ -2,7 +2,7 @@ import {useState} from 'react';
 import {Form, Input, Button, Typography, message} from 'antd';
 import {Link, useNavigate} from 'react-router-dom';
 import '../styles/SignUp.css';
-import axios from '../Config/axios';
+import axios from '../config/axios';
 
 const {Title} = Typography;
 

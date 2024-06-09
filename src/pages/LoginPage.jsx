@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import {Button, Form, Input, message, Typography} from 'antd';
 import {LockOutlined, UserOutlined} from '@ant-design/icons';
-import axios from '../Config/axios';
+import axios from '../config/axios';
 import {Link, useNavigate} from 'react-router-dom';
 import '../styles/LoginPage.css';
 import Cookies from 'js-cookie';
